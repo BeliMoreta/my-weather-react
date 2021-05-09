@@ -1,38 +1,27 @@
-.App {
+.WeatherApp {
+  display: block;
   text-align: center;
+  padding: 10px 0;
+  max-width: 500px;
+  margin: 0 auto;
+  border: rgb(97, 93, 93) 5px solid;
+  background-image: linear-gradient(to top, #c7eaf0 0%, #a3acd6 100%);
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h5 {
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  color: rgb(68, 65, 65);
+  font-weight: bolder;
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h6 {
+  text-align: center;
+  color: rgb(68, 65, 65);
+  margin: 0px 0 15px 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 15px;
+  padding-top: 1%;
 }

@@ -1,0 +1,27 @@
+h3 {
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  color: rgb(68, 65, 65);
+  font-weight: bolder;
+  padding-top: 0%;
+  font-size: 30px;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  color: rgb(68, 65, 65);
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.minMax {
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  font-size: 30px;
+  color: rgb(68, 65, 65);
+}
+
+hr {
+  max-width: 450px;
+}
