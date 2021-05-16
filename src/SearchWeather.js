@@ -6,7 +6,6 @@ import Button from "./Button";
 
 export default function SearchWeather() {
   let [city, setCity] = useState("");
-  let [message, setMessage] = useState("");
   let [loaded, setLoaded] = useState(false);
   let [weather, setWeather] = useState({});
 
@@ -21,7 +20,7 @@ export default function SearchWeather() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description
     });
-    setMessage(`Weather in ${city} is:`);
+  
   }
 
   function handleSubmit(event) {
