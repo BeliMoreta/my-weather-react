@@ -27,8 +27,7 @@ input {
   background-image: url(https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80);
 }
 
-
-.details {
+h1 {
   display: block;
   text-align: center;
   font-weight: bolder;
@@ -43,6 +42,18 @@ input {
   padding-bottom: 1px;
   background-color: #0e1f3a;
   opacity: 0.85;
+}
+
+.details {
+  display: block;
+  list-style-type: none;
+  text-align: center;
+  font-weight: bolder;
+  font-family: "Chivo", sans-serif;
+  font-size: 15px;
+  padding-left: 1.5cm;
+  padding-right: 0.5cm;
+  color: rgb(255, 255, 255);
 }
 
 ul {
