@@ -1,16 +1,16 @@
 import React from "react";
 
-import Search from "./Search";
+
 import Button from "./Button";
 import WeatherInfo from "./WeatherInfo";
 import City from "./City";
+import SearchWeather from "./SearchWeather";
 
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
-      <Search />
-      <Button />
-      <WeatherInfo />
+      <SearchWeather />
+
       <City />
     </div>
   );
