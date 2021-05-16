@@ -1,8 +1,7 @@
 import React from "react";
 
 
-import Button from "./Button";
-import WeatherInfo from "./WeatherInfo";
+
 import City from "./City";
 import SearchWeather from "./SearchWeather";
 
