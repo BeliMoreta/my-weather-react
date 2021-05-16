@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import SearchWeather from "./SearchWeather";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
