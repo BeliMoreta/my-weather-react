@@ -16,6 +16,7 @@ export default function SearchWeather() {
       feels_like: response.data.main.feels_like,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description
@@ -91,7 +92,3 @@ export default function SearchWeather() {
     return form;
   }
 }
-
-
-
-
