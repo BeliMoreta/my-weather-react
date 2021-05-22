@@ -82,7 +82,7 @@ export default function SearchWeather() {
                 </li>
                 <li>
                 <FormattedDate date={weather.date} />
-        </li>
+                </li>
               </ul>
             </div>
           </div>
