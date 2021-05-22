@@ -1,7 +1,7 @@
 import React from "react";
-import "./WeatherInfo.css";
 
-export default function WeatherInfo() {
+
+export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <div className="frame">
