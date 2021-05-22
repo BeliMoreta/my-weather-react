@@ -81,7 +81,7 @@ export default function SearchWeather() {
                 Pressure: <strong>{weather.pressure}Pa%</strong>
                 </li>
                 <li>
-          <FormattedDate date={props.data.date} />
+                <FormattedDate date={weather.date} />
         </li>
               </ul>
             </div>
