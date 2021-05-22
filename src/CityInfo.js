@@ -1,7 +1,7 @@
 import React from "react";
-import "./City.css";
+import "./CityInfo.css";
 
-export default function City() {
+export default function CityInfo() {
   return (
     <div className="City">
       <h3>

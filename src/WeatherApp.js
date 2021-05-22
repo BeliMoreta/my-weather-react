@@ -1,8 +1,5 @@
 import React from "react";
-
-
-
-import City from "./City";
+import CityInfo from "./CityInfo";
 import SearchWeather from "./SearchWeather";
 
 export default function WeatherApp() {
@@ -10,7 +7,7 @@ export default function WeatherApp() {
     <div className="WeatherApp">
       <SearchWeather />
 
-      <City />
+      <CityInfo />
     </div>
   );
 }
