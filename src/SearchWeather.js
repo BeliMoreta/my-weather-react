@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./SearchWeather.css";
 import Button from "./Button";
+import FormattedDate from "./FormattedDate";
 
 
 export default function SearchWeather() {
@@ -79,6 +80,9 @@ export default function SearchWeather() {
                 <li>
                 Pressure: <strong>{weather.pressure}Pa%</strong>
                 </li>
+                <li>
+          <FormattedDate date={props.data.date} />
+        </li>
               </ul>
             </div>
           </div>
