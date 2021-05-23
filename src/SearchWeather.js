@@ -21,6 +21,7 @@ export default function SearchWeather() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       city: response.data.name,
+      fahrenheit: ((response.data.main.temp * 9) / 5 + 32)
     });
     setLoaded(true);
   }
@@ -94,7 +95,7 @@ export default function SearchWeather() {
         🌡
         <br />
         <br />
-        <strong>15°C</strong>
+        <strong>15°C / 58.28F</strong>
       </div>
 
       <hr />
@@ -161,7 +162,7 @@ export default function SearchWeather() {
         🌡
         <br />
         <br />
-        <strong>{Math.round(weather.temperature)}°C</strong>
+        <strong>{Math.round(weather.temperature)}°C / {weather.fahrenheit}F</strong>
       </div>
 
       <hr />
