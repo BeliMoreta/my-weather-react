@@ -11,7 +11,6 @@ export default function SearchWeather() {
   let [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    setLoaded(true);
     setWeather({
       temperature: response.data.main.temp,
       feels_like: response.data.main.feels_like,
@@ -20,9 +19,9 @@ export default function SearchWeather() {
       date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description
+      description: response.data.weather[0].description,
     });
-  
+    setLoaded(true);
   }
 
   function handleSubmit(event) {
