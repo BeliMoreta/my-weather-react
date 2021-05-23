@@ -20,6 +20,7 @@ export default function SearchWeather() {
       pressure: response.data.main.pressure,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      city: response.data.name,
     });
     setLoaded(true);
   }
@@ -149,7 +150,7 @@ export default function SearchWeather() {
       <div className="City">
       <h3>
         <span className="city" id="city">
-        {city}
+        {weather.city}
         </span>
       </h3>
       <h4>
