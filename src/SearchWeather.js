@@ -6,9 +6,9 @@ import FormattedDate from "./FormattedDate";
 
 
 export default function SearchWeather() {
-  let [city, setCity] = useState("");
-  let [loaded, setLoaded] = useState(false);
-  let [weather, setWeather] = useState({});
+  const [city, setCity] = useState("");
+  const [loaded, setLoaded] = useState(false);
+  const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
     setWeather({
@@ -35,17 +35,78 @@ export default function SearchWeather() {
     setCity(event.target.value);
   }
 
+
   let form = (
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Search for a city" onChange={updateCity} />
       <input type="submit" value="🔍" />
+      <br />
+      <Button />
+      <br />
+      <div className="WeatherInfo">
+      <div className="frame">
+      <h1>
+          <div className="degrees">
+            <span className="temperature" id="temperature">
+            <strong>15°C</strong>
+            </span>
+            <span className="degreesTypes"></span>
+          </div>
+          <span className="description" id="temperature-description">
+          <strong>Cloudy</strong>
+          </span>
+          <div className="icono">
+           ☁
+            <br />
+            <div className="details">
+              <ul>
+                <li>
+                Feels like: <strong>12°C</strong>
+                </li>
+                <li>
+                Wind: <strong>2.24km/h</strong>
+                </li>
+                <li>
+                  
+                  Humidity: <strong>40%</strong>
+                </li>
+                <li>
+                Pressure: <strong>1002Pa%</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </h1>
+      </div>
+
+      <div className="City">
+      <h3>
+        <span className="city" id="city">
+        Madrid
+        </span>
+      </h3>
+      <h4>
+        <hr />
+        Sunday 21:15
+      </h4>
+      <div className="minMax">
+        🌡
+        <br />
+        <br />
+        <strong>15°C</strong>
+      </div>
+
+      <hr />
+    </div>
+    </div> 
     </form>
   );
 
   if (loaded) {
     return (
       <div>
-      {form}
+      <input type="search" placeholder="Search for a city" onChange={updateCity} />
+      <input type="submit" value="🔍" />
       <br />
       <Button />
       <br />
@@ -79,14 +140,31 @@ export default function SearchWeather() {
                 <li>
                 Pressure: <strong>{weather.pressure}Pa%</strong>
                 </li>
-                <li>
-                <FormattedDate date={weather.date} />
-                </li>
               </ul>
             </div>
           </div>
         </h1>
       </div>
+
+      <div className="City">
+      <h3>
+        <span className="city" id="city">
+        {city}
+        </span>
+      </h3>
+      <h4>
+        <hr />
+        <FormattedDate date={weather.date} />
+      </h4>
+      <div className="minMax">
+        🌡
+        <br />
+        <br />
+        <strong>{Math.round(weather.temperature)}°C</strong>
+      </div>
+
+      <hr />
+    </div>
     </div> 
     </div> 
 
