@@ -95,7 +95,7 @@ export default function SearchWeather() {
         🌡
         <br />
         <br />
-        <strong>15°C / 58.28F</strong>
+        <strong>15°C / 58F</strong>
       </div>
 
       <hr />
@@ -162,7 +162,7 @@ export default function SearchWeather() {
         🌡
         <br />
         <br />
-        <strong>{Math.round(weather.temperature)}°C / {weather.fahrenheit}F</strong>
+        <strong>{Math.round(weather.temperature)}°C / {Math.round(weather.fahrenheit)}F</strong>
       </div>
 
       <hr />
