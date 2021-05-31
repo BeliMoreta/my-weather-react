@@ -6,13 +6,14 @@ import FormattedDate from "./FormattedDate";
 import WeatherForecast from "./WeatherForecast";
 
 
+
 export default function SearchWeather() {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
   function displayWeather(response) {
     setWeather({
-      coord: response.data.coord,
+      coordinates: response.data.coordinates,
       temperature: response.data.main.temp,
       feels_like: response.data.main.feels_like,
       wind: response.data.wind.speed,
@@ -106,7 +107,7 @@ export default function SearchWeather() {
             </div>
             <hr />
           </div>
-          <WeatherForecast coord={weather.date} />
+          <WeatherForecast coordinates={weather.coordinates}/>
           <br />
           <br />
         </div>
