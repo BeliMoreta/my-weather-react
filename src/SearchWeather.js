@@ -20,7 +20,7 @@ export default function SearchWeather() {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       pressure: response.data.main.pressure,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       city: response.data.name,
       fahrenheit: (response.data.main.temp * 9) / 5 + 32,
