@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 export default function WeatherForecastDay(props) {
   function maxTemperature() {
     let temperature = Math.round(props.data.temp.max);

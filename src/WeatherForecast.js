@@ -9,7 +9,7 @@ export default function WeatherForecast(props) {
 
     useEffect(() => {
         setLoaded(false);
-      }, [props.coordinates]);
+      }, [props.coord]);
     
 
 function handleResponse(response) {
@@ -38,8 +38,8 @@ if(loaded) {
     );
   } else {
     let apiKey = "829fcd3105a3bc78b07b8b3c45973e5b";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
+    let longitude = props.coord.lon;
+    let latitude = props.coord.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);

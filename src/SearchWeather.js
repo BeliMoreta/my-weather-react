@@ -13,7 +13,7 @@ export default function SearchWeather() {
   const [weather, setWeather] = useState({});
   function displayWeather(response) {
     setWeather({
-      coordinates: response.data.coordinates,
+      coord: response.data.coord,
       temperature: response.data.main.temp,
       feels_like: response.data.main.feels_like,
       wind: response.data.wind.speed,
@@ -107,7 +107,7 @@ export default function SearchWeather() {
             </div>
             <hr />
           </div>
-          <WeatherForecast coordinates={weather.coordinates}/>
+          <WeatherForecast coord={weather.coord}/>
           <br />
           <br />
         </div>
