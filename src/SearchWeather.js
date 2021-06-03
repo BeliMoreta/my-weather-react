@@ -4,6 +4,7 @@ import "./SearchWeather.css";
 import Button from "./Button";
 import FormattedDate from "./FormattedDate";
 import WeatherForecast from "./WeatherForecast";
+import WeatherIcon from "./WeatherIcon";
 
 
 
@@ -45,7 +46,9 @@ export default function SearchWeather() {
       />
       <input type="submit" value="🔍" />
       <br />
+      <br />
       <Button />
+      <br />
     </form>
   );
   if (loaded) {
@@ -65,7 +68,7 @@ export default function SearchWeather() {
                 <strong>{weather.description}</strong>
               </span>
               <div className="icono">
-                <img src={weather.icon} alt={weather.description} />
+              
                 <br />
                 <div className="details">
                   <ul>
@@ -87,6 +90,7 @@ export default function SearchWeather() {
               </div>
             </h1>
           </div>
+          <br />
           <div className="City">
             <h3>
               <span className="city" id="city">
@@ -99,7 +103,6 @@ export default function SearchWeather() {
             </h4>
             <div className="minMax">
               🌡
-              <br />
               <br />
               <strong>
                 {Math.round(weather.temperature)}°C / {Math.round(weather.fahrenheit)}F
