@@ -125,7 +125,6 @@ export default function SearchWeather(props) {
     return (
     <div>
       {form}
-      
     </div>
     );
   }
