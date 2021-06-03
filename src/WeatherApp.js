@@ -5,9 +5,9 @@ import SearchWeather from "./SearchWeather";
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
-      <SearchWeather />
+      <SearchWeather defaultCity="Madrid"/>
 
-      <CityInfo />
+     
     </div>
   );
 }

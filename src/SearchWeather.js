@@ -4,12 +4,14 @@ import "./SearchWeather.css";
 import Button from "./Button";
 import FormattedDate from "./FormattedDate";
 import WeatherForecast from "./WeatherForecast";
-import WeatherIcon from "./WeatherIcon";
+import Icon1 from "./Icon1";
+import Degrees from "./Degrees";
+
 
 
 
 export default function SearchWeather(props) {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
   
@@ -61,7 +63,7 @@ export default function SearchWeather(props) {
           <div className="frame">
             <h1>
               <div className="degrees">
-                <span className="temperature" id="temperature">
+                <span className="temperature" id="temperature"> 
                   <strong>{Math.round(weather.temperature)}°C</strong>
                 </span>
                 <span className="degreesTypes"></span>
@@ -70,7 +72,7 @@ export default function SearchWeather(props) {
                 <strong>{weather.description}</strong>
               </span>
               <div className="float-center">
-              <WeatherIcon code={props.icon} size={36} />
+              <Icon1 code={weather.icon} size={80} />
               
                 <br />
                 <div className="details">
@@ -108,7 +110,7 @@ export default function SearchWeather(props) {
               🌡
               <br />
               <strong>
-                {Math.round(weather.temperature)}°C / {Math.round(weather.fahrenheit)}F
+              <span className="temperature" id="temperature"><Degrees celsius={weather.temperature} /> </span>
               </strong>
             </div>
             <hr />
@@ -120,6 +122,11 @@ export default function SearchWeather(props) {
       </div>
     );
   } else {
-    return form;
+    return (
+    <div>
+      {form}
+      
+    </div>
+    );
   }
 }
