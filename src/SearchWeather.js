@@ -8,10 +8,12 @@ import WeatherIcon from "./WeatherIcon";
 
 
 
-export default function SearchWeather() {
+export default function SearchWeather(props) {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
+  
+  
   function displayWeather(response) {
     setWeather({
       coord: response.data.coord,
@@ -67,7 +69,8 @@ export default function SearchWeather() {
               <span className="description" id="temperature-description">
                 <strong>{weather.description}</strong>
               </span>
-              <div className="icono">
+              <div className="float-center">
+              <WeatherIcon code={props.icon} size={36} />
               
                 <br />
                 <div className="details">
