@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./SearchWeather.css";
-import Button from "./Button";
 import FormattedDate from "./FormattedDate";
 import WeatherForecast from "./WeatherForecast";
 import Icon1 from "./Icon1";
 import Degrees from "./Degrees";
-
 
 
 
@@ -16,7 +14,7 @@ export default function SearchWeather(props) {
   const [weather, setWeather] = useState({});
   
   
-  function displayWeather(response) {
+  function handleResponse(response) {
     setWeather({
       coord: response.data.coord,
       temperature: response.data.main.temp,
@@ -34,31 +32,34 @@ export default function SearchWeather(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "829fcd3105a3bc78b07b8b3c45973e5b";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
+    search();
   }
-  function updateCity(event) {
+  
+  function handleCityChange(event) {
     setCity(event.target.value);
   }
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="search"
-        placeholder="Search for a city"
-        onChange={updateCity}
-      />
-      <input type="submit" value="🔍" />
-      <br />
-      <br />
-      <Button />
-      <br />
-    </form>
-  );
+
+  function search() {
+    const apiKey = "829fcd3105a3bc78b07b8b3c45973e5b";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+
+ 
   if (loaded) {
     return (
       <div>
-        {form}
+        <br />
+        <form onSubmit={handleSubmit}>
+      <input
+        type="search"
+        placeholder="Search for a city"
+        onChange={handleCityChange}
+      />
+      <input type="submit" value="🔍" />
+    </form>
+        <br />
         <div className="WeatherInfo">
           <div className="frame">
             <h1>
@@ -110,7 +111,7 @@ export default function SearchWeather(props) {
               🌡
               <br />
               <strong>
-              <span className="temperature" id="temperature"><Degrees celsius={weather.temperature} /> </span>
+              <span className="temperature2" id="temperature2"><Degrees celsius={weather.temperature} /> </span>
               </strong>
             </div>
             <hr />
@@ -122,10 +123,7 @@ export default function SearchWeather(props) {
       </div>
     );
   } else {
-    return (
-    <div>
-      {form}
-    </div>
-    );
+    search();
+    return "Loading...";
   }
 }

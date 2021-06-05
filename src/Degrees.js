@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./Degrees.css";
 
 export default function Degrees(props){
 
